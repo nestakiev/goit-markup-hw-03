@@ -5,8 +5,11 @@
     --dark-grey: #2F303A; /* background-color */
     --white-text: #FFFFFF;
     --blue: #2196F3;
-
+    --border-header: #ECECEC;
+    --border-portlofio: #EEEEEE;
+    --button-bcg: #F5F4FA;
 }
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -16,7 +19,35 @@ body {
     letter-spacing: 0.03em;
 }
 
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+.list-item {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
 /* Хедер (навигация и конктакты*/
+.flex {
+display: flex;
+align-items: center;
+}
+
+.site-nav .list-item {
+    margin-left: 93px;
+}
+
+.site-nav .item {
+    margin-right: 50px;
+}
+
+.site-nav .item:last-child {
+    margin-right: 0px;
+}
+
 .site-nav .link {
     color: var(--black-text);
     font-weight: 500;
@@ -24,6 +55,9 @@ body {
     line-height: 1.14;
     letter-spacing: 0.02em;
     text-decoration: none;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 .logo {
@@ -45,6 +79,10 @@ body {
     color: var(--white-text);
 }
 
+.contacts-head.list-item {
+    margin-left: auto;    
+}
+
 .contacts-head .link {
     color: var(--grey-text);
     font-weight: 500;
@@ -54,14 +92,17 @@ body {
     text-decoration: none;
 }
 
-
-
-.list-item {
-    list-style-type: none;
+.contacts-head .item + .item {
+    margin-left: 50px;
 }
+
 
 .link.current-page {
     color: var(--blue);
+}
+
+.header-border {
+    border-bottom: 1px solid var(--border-header);
 }
 
 /* Мейн */
@@ -70,20 +111,22 @@ body {
 
 .hero {
      background-color: var(--dark-grey); 
+     text-align: center;
+     margin-top: 47px;
 }
 
 .hero-title {
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
-    text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--white-text);
+    margin: 0;
 }
 
 .hero-button {
-    cursor: pointer;
+    text-decoration: none;
     font-family: inherit;
     font-weight: 700;
     font-size: 16px;
@@ -91,10 +134,13 @@ body {
     text-align: center;
     letter-spacing: 0.06em;
     color: var(--white-text);
-    background-color: var(--blue);
+    background-color: var(--blue);    
 }
 
 /* Особенности */
+.section {
+    padding: 47px 0;
+}
 
 .spec-title {    
     font-size: 14px;
@@ -103,13 +149,42 @@ body {
     color: var(--black-text);
 }
 
+.spec-section .list-item {
+    display: flex;
+}
+
+.spec-section .item {
+    margin-right: 30px;
+}
+.spec-section .item:last-child {
+    margin-right: 0;
+}
+
+
+.spec-title {
+    margin: 0px 0px 10px;
+}
+.spec-text {
+    margin: 0px;
+}
+
 /* Чем мы занимаемся и наша команда*/
+.work-section .list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgblock {
+    display: block;
+}
+
 .work-title,
 .team-title {
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     color: var(--black-text);
+    margin: 0px 0px 50px;
 }
 
 .team-name {
@@ -124,11 +199,35 @@ body {
     line-height: 1.19;    
 }
 
+.team-section .list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-section .item {
+    text-align: center;
+    border: 1px solid var(--grey-text); /*скорей всего так*/
+    border-radius: 5px;
+}
+
+.team-section .team-name {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.team-section .team-position {
+    margin: 0;
+    padding-bottom: 30px;
+}
+
 /* Футтер */
 
 .footer {
     background-color: var(--dark-grey);
+    margin-top: 47px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
+
 
 .address {
     font-style: normal;
@@ -136,6 +235,12 @@ body {
 
 .physical-address {
     color: var(--white-text);
+    margin-top: 20px;
+    margin-bottom: 9px;
+}
+
+.footer .list-item .item:first-child {
+    margin-bottom: 9px;
 }
 
 .footer .link {
@@ -150,16 +255,32 @@ body {
 
 /* Портфолио */
 
+
+
 .portfolio .title {
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
     color: var(--black-text);
+    margin: 0px 0px 4px;
 }
 
 .portfolio .text {
     font-size: 16px;
     line-height: 1.88;
+    margin: 0px;    
+}
+
+.filter-list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 94px 0px 0px;
+    margin: 0px 0px 50px;
+}
+
+.filter-list .item:not(:last-child) {
+    margin-right: 8px;
 }
 
 .portfolio .button {
@@ -170,6 +291,10 @@ body {
     text-align: center;
     cursor: pointer;
     font-family: inherit;
+    background-color: var(--button-bcg);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0px 22px;
 }
 
 .portfolio .button:hover,
@@ -178,3 +303,28 @@ body {
     background-color: var(--blue);
 }
 
+.portfolio .list-item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio .list-item .item {
+    width: calc((100% - 60px) / 3);
+    margin-right: 30px;
+    margin-bottom: 30px;    
+}
+
+.portfolio .list-item .item:nth-child(3n) {
+    margin-right: 0px;
+}
+
+.portfolio .list-item .item:nth-last-child(-n + 3) {
+    margin-bottom: 47px;
+}
+
+.content {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-portlofio);
+    border-right: 1px solid var(--border-portlofio);
+    border-left: 1px solid var(--border-portlofio);
+}
