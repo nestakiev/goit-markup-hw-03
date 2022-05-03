@@ -7,7 +7,8 @@
     --blue: #2196F3;
     --border-header: #ECECEC;
     --border-portlofio: #EEEEEE;
-    --grey-bcg: #F5F4FA;    
+    --grey-bcg: #F5F4FA;
+    --hero-button-shadow: rgba(0, 0, 0, 0.15);    
 }
 
 
@@ -136,7 +137,11 @@ align-items: center;
     text-align: center;
     letter-spacing: 0.06em;
     color: var(--white-text);
-    background-color: var(--blue);    
+    background-color: var(--blue);
+    border: 1px solid transparent;
+    border-radius: 4px; 
+    padding: 10px 32px;
+    box-shadow: 0px 4px 4px var(--hero-button-shadow);   
 }
 
 /* Особенности */
